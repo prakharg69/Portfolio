@@ -1,9 +1,9 @@
 import React from 'react'
 
-function navbar() {
+function Navbar() {
   return (
-    <div>navbar</div>
+    <div className='h-100 w-300 bg-amber-300'>navbar</div>
   )
 }
 
-export default navbar
+export default Navbar

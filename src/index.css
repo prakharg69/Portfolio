@@ -10,3 +10,45 @@ body {
 
   background-size: 40px 40px;
 }
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets//fonts/Geist-Bold.woff2")format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("./assets//fonts/Geist-Regular.woff2")format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Scaver";
+  src: url("./assets/fonts/Scaver-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Array";
+  src: url("./assets/fonts/Array-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Boxing";
+  src: url("./assets/fonts/Boxing-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+.boxing-font {
+  font-family: "Boxing", sans-serif;
+}
+.array-font {
+  font-family: "Array", sans-serif;
+}
+
+.geist-font {
+  font-family: "Geist", sans-serif;
+}
+.scaver-font {
+  font-family: "Scaver", serif;
+}
