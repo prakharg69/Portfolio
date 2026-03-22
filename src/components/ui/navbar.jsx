@@ -23,7 +23,7 @@ function Navbar() {
     <div
       className="fixed bottom-6 left-1/2 -translate-x-1/2
       backdrop-blur-lg bg-white/10 border border-white/20
-      px-6 py-3 rounded-full flex gap-6 text-white shadow-xl"
+      px-6 py-3 rounded-full flex gap-6 text-white shadow-xl z-100"
     >
       {items.map((item) => {
         const Icon = item.icon;
