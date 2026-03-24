@@ -722,45 +722,71 @@ useEffect(() => {
 
 // --- MINIMAL LAYOUT ---
 const MinimalLayout = ({ data, iconMap }) => {
-  const allSkills = [...data.techStack.frontend, ...data.techStack.backend, ...data.techStack.other];
+  const allSkills = [
+    ...data.techStack.frontend,
+    ...data.techStack.backend,
+    ...data.techStack.other
+  ];
+
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto p-6 pt-24 h-full overflow-y-auto">
+    <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto p-6 pt-24 h-full overflow-y-auto scrollbar-hide">
+      
       <div className="text-center mb-12">
         <div className="w-32 h-32 mx-auto rounded-full border border-gray-600 mb-6 overflow-hidden bg-gray-900">
-          <img src={portfolio} alt="Profile" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+          <img 
+            src={portfolio} 
+            alt="Profile" 
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" 
+          />
         </div>
-        <h1 className="array-font text-5xl md:text-6xl font-bold text-white tracking-tighter">{data.personalInfo.name}</h1>
-        <p className="text-blue-500 font-mono mt-2 text-lg tracking-widest">{data.personalInfo.title}</p>
+
+        <h1 className="array-font text-5xl md:text-6xl font-bold text-white tracking-tighter">
+          {data.personalInfo.name}
+        </h1>
+
+        <p className="text-blue-500 font-mono mt-2 text-lg tracking-widest">
+          {data.personalInfo.title}
+        </p>
       </div>
+
       <div className="w-full space-y-10">
+        
         <div className="border-t border-gray-800 pt-8">
           <p className="text-gray-300 text-center font-mono text-lg leading-relaxed max-w-2xl mx-auto">
             {data.about.summary}
           </p>
         </div>
+
         <div className="flex flex-wrap justify-center gap-12">
           {data.education.map((edu, idx) => (
             <div key={idx} className="text-center group">
-              <h4 className="text-white font-bold text-lg mb-1 group-hover:text-blue-400 transition-colors">{edu.level}</h4>
+              <h4 className="text-white font-bold text-lg mb-1 group-hover:text-blue-400 transition-colors">
+                {edu.level}
+              </h4>
               <p className="text-gray-500 text-sm mb-2">{edu.institution}</p>
               <span className="text-2xl font-bold font-mono text-white">
-                {edu.cgpa ? edu.cgpa : edu.percentage+'%'}
+                {edu.cgpa ? edu.cgpa : edu.percentage + '%'}
               </span>
             </div>
           ))}
         </div>
+
         <div className="flex justify-center gap-8 flex-wrap pt-8 border-t border-gray-800">
           {allSkills.map((skill, idx) => (
-            <div key={idx} className="text-4xl text-gray-600 hover:text-blue-400 hover:scale-125 transition-all duration-300" title={skill}>
+            <div
+              key={idx}
+              className="text-4xl text-gray-600 hover:text-blue-400 hover:scale-125 transition-all duration-300"
+              title={skill}
+            >
               {iconMap[skill]}
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
 };
-
 // --- MAGAZINE LAYOUT ---
 const MagazineLayout = ({ data, iconMap }) => {
   const allSkills = [...data.techStack.frontend, ...data.techStack.backend, ...data.techStack.other];
