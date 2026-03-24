@@ -91,7 +91,7 @@ const GithubContributions = () => {
   const totalContributions = contributions.reduce((sum, d) => sum + d.count, 0);
 
   return (
-    <div className="w-full max-w-full bg-gray-900/70 backdrop-blur-md border border-dotted border-gray-700 rounded-2xl p-4">
+    <div className="max-w-full bg-gray-900/70 backdrop-blur-md border border-dotted border-gray-700 rounded-2xl p-4">
 
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
@@ -103,8 +103,8 @@ const GithubContributions = () => {
         </span>
       </div>
 
-      {/* Graph (ONLY this scrolls if needed) */}
-      <div className="overflow-x-auto">
+      {/* Graph (scroll hidden) */}
+      <div className="overflow-x-auto scrollbar-hide">
         <div className="inline-block min-w-[700px]">
 
           {/* Month labels */}
