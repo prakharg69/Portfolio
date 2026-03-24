@@ -47,10 +47,7 @@ function Home() {
           <FaNodeJs />
         </motion.div>
 
-        <motion.div className="hidden md:block absolute right-64 top-1/2 text-6xl text-cyan-400"
-          animate={{ y: [0, 10, 0] }} transition={{ duration: 6, repeat: Infinity }}>
-          <SiTailwindcss />
-        </motion.div>
+
 
         {/* Main Text */}
         <div className="text-center">
