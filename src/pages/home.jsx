@@ -58,7 +58,7 @@ function Home() {
           {/* LINE 1 (NO BREAK) */}
           <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-4 whitespace-nowrap">
 
-            <h1 className="array-font text-[25px] sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+            <h1 className="array-font text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
               CRAFTING DIGITAL
             </h1>
 
@@ -69,7 +69,7 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5 }}
-                className="array-font text-[25px] sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-blue-500 tracking-tight"
+                className="array-font text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-blue-500 tracking-tight"
               >
                 {words[index]}
               </motion.h1>
