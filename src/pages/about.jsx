@@ -44,7 +44,7 @@ import {
 // Static Data
 const data = {
   personalInfo: {
-    name: "Anurag yadav",
+    name: "PrakharShourya Gussain",
     title: "B.Tech CSE Student",
     university: "Lovely Professional University (LPU)",
     year: "3rd Year",
@@ -449,7 +449,7 @@ const BentoLayout = ({
           {/* Main Icons - Larger, Spaced Out, with Glow */}
           <div className="flex gap-8 z-10">
             <motion.a
-              href="#"
+              href="https://www.instagram.com/prakharrrrr_g/"
               className="text-4xl text-pink-500 hover:text-pink-400 drop-shadow-[0_0_10px_rgba(236,72,153,0.3)] transition-all"
               whileHover={{ y: -5, scale: 1.1 }}
             >
@@ -463,7 +463,7 @@ const BentoLayout = ({
               <FaTwitter />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/prakhar-gussain-7aaa733b9/"
               className="text-4xl text-blue-600 hover:text-blue-500 drop-shadow-[0_0_10px_rgba(37,99,235,0.3)] transition-all"
               whileHover={{ y: -5, scale: 1.1 }}
             >

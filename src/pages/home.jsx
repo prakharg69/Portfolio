@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiMongodb } from "react-icons/si";
 import Navbar from "../components/ui/navbar";
+import DownloadButton from "../components/ui/Resumebutton";
+
 
 const words = ["SERVICES", "PRODUCTS", "SYSTEMS", "PROJECTS"];
 
@@ -20,6 +22,7 @@ function Home() {
   return (
     <>
       <section className="grid-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden px-4">
+        <DownloadButton></DownloadButton>
 
         {/* Floating Icons (optional: hide on small screens for cleanliness) */}
         <motion.div className="hidden md:block absolute left-24 top-1/3 text-6xl text-gray-400"

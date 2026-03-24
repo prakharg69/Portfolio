@@ -7,31 +7,31 @@ import GithubContributions from '../components/ui/Gitcontribution';
 import ProjectModal from '../components/ui/ProjectModal';
 import arroww from "../assets/images/arrow.png";
 
-const projects = [
+export const projects = [
   {
     id: 1,
     title: "POS Software (Point of Sale System)",
     description:
-      "A full-featured Point of Sale (POS) system designed for retail and restaurant environments. It enables real-time billing, inventory tracking, sales analytics, and multi-user role management. Built with scalability and performance in mind, the system supports secure transactions, dynamic product management, and detailed reporting dashboards.",
-    
+      "A full-stack POS system that enables shop owners to manage inventory, billing, and store operations through a web-based platform. Features a QR-based billing system with automatic SKU generation, real-time cart updates, and optimized performance using caching and efficient data handling.",
+
     techStack: [
       "React.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
       "Node.js",
       "Express.js",
       "MongoDB",
-      "Redux Toolkit",
-      "Tailwind CSS",
-      "Stripe API",
-      "JWT Authentication"
+      "Redis",
+      "JWT"
     ],
 
     features: [
-      "Real-time billing & invoice generation",
-      "Inventory management with stock alerts",
-      "Role-based access control (Admin/Cashier)",
-      "Sales analytics & reporting dashboard",
-      "Secure payment integration",
-      "Responsive UI for desktop & tablet"
+      "QR-based billing with automatic SKU generation",
+      "Real-time inventory synchronization using Redis",
+      "Fast and responsive UI with optimized performance",
+      "Dynamic product and cart management system",
+      "Secure authentication using JWT",
+      "Scalable backend architecture for store operations"
     ],
 
     category: "Full Stack",
@@ -40,28 +40,28 @@ const projects = [
 
   {
     id: 2,
-    title: "Real-Time Chat Messaging App",
+    title: "Real-Time Chat Application",
     description:
-      "A scalable real-time chat application supporting instant messaging, user presence, and message synchronization. The system ensures low-latency communication using WebSockets and includes features like typing indicators, read receipts, and media sharing, delivering a seamless messaging experience across devices.",
-    
+      "A full-stack real-time chat application enabling users to send and receive messages instantly with low latency. Built using WebSockets for bidirectional communication, ensuring live updates, efficient event handling, and a smooth user experience.",
+
     techStack: [
       "React.js",
-      "Node.js",
-      "Socket.io",
-      "Express.js",
-      "MongoDB",
       "Redux",
       "Tailwind CSS",
-      "Cloudinary"
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.IO",
+      "JWT"
     ],
 
     features: [
-      "Real-time messaging with WebSocket",
-      "Typing indicators & online status",
-      "Media/image sharing support",
-      "Read receipts & message timestamps",
-      "Authentication & secure sessions",
-      "Modern chat UI with dynamic updates"
+      "Real-time messaging using Socket.IO",
+      "Instant message synchronization across users",
+      "Efficient event-driven communication system",
+      "Secure user authentication and session handling",
+      "Responsive and modern chat UI",
+      "Scalable backend APIs for message handling"
     ],
 
     category: "Realtime App",
@@ -70,35 +70,35 @@ const projects = [
 
   {
     id: 3,
-    title: "Voice-Controlled Process Management System",
+    title: "Advanced MERN Authentication System",
     description:
-      "An intelligent process management system that enables users to control and automate workflows using voice commands. The platform leverages speech recognition and natural language processing to execute tasks, manage processes, and improve productivity through hands-free interaction and smart automation.",
-    
+      "A secure and scalable authentication system supporting multiple login methods including email-password, Google OAuth, and OTP-based verification. Designed with robust API architecture and token-based security for reliable session management.",
+
     techStack: [
       "React.js",
       "Node.js",
       "Express.js",
       "MongoDB",
-      "Web Speech API",
-      "Redux Toolkit",
-      "Tailwind CSS",
-      "JWT Authentication"
+      "Redis",
+      "JWT",
+      "bcrypt.js",
+      "Nodemailer",
+      "Brevo"
     ],
 
     features: [
-      "Voice command-based task execution",
-      "Speech-to-text processing using Web Speech API",
-      "Workflow automation & process management",
-      "Real-time command recognition feedback",
-      "Secure authentication & user roles",
-      "Interactive dashboard for monitoring processes"
+      "Multi-auth system (Email, Google OAuth, OTP)",
+      "JWT-based authentication with access & refresh tokens",
+      "Secure password hashing using bcrypt",
+      "Email verification & OTP system",
+      "Session management with Redis caching",
+      "Protected routes and role-based access control"
     ],
 
-    category: "Voice AI / Automation",
+    category: "Backend / Auth System",
     status: "Completed"
   }
 ];
-
 function Work() {
     const {setActive} = useContext(navContext);
     const [selectedProject, setSelectedProject] = useState(null);
