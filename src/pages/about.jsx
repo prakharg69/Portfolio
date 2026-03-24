@@ -21,7 +21,7 @@ import {
 // Static Data
 const data = {
   "personalInfo": {
-    "name": "Prakhar Shourya",
+    "name": "Anurag yadav",
     "title": "B.Tech CSE Student",
     "university": "Lovely Professional University (LPU)",
     "year": "3rd Year",
@@ -832,7 +832,7 @@ const MagazineLayout = ({ data, iconMap }) => {
 
 function About() {
   const { setActive } = useContext(navContext);
-  const [layout, setLayout] = useState('bento'); 
+  const [layout, setLayout] = useState('minimal'); 
   const [time, setTime] = useState(new Date());
   const [randomImg, setRandomImg] = useState('https://picsum.photos/400/400?random=1');
   const [musicPlaying, setMusicPlaying] = useState(false);
@@ -850,6 +850,16 @@ function About() {
         {/* Layout Switcher */}
         <div className="absolute top-24 right-6 z-20 flex flex-col gap-2">
           <span className="text-[10px] text-gray-500 font-mono tracking-widest uppercase text-right mb-1">View Layout</span>
+           <button 
+            onClick={() => setLayout('minimal')} 
+            className={`px-4 py-2 text-xs font-mono border transition-all ${
+              layout === 'minimal' 
+                ? 'bg-blue-600 border-blue-400 text-white shadow-[0_0_10px_rgba(37,99,235,0.5)]' 
+                : 'border-gray-700 text-gray-400 hover:border-gray-500 hover:bg-gray-800'
+            }`}
+          >
+            MINIMAL
+          </button>
           <button 
             onClick={() => setLayout('bento')} 
             className={`px-4 py-2 text-xs font-mono border transition-all ${
@@ -860,16 +870,7 @@ function About() {
           >
             BENTO
           </button>
-          <button 
-            onClick={() => setLayout('minimal')} 
-            className={`px-4 py-2 text-xs font-mono border transition-all ${
-              layout === 'minimal' 
-                ? 'bg-blue-600 border-blue-400 text-white shadow-[0_0_10px_rgba(37,99,235,0.5)]' 
-                : 'border-gray-700 text-gray-400 hover:border-gray-500 hover:bg-gray-800'
-            }`}
-          >
-            MINIMAL
-          </button>
+         
           <button 
             onClick={() => setLayout('magazine')} 
             className={`px-4 py-2 text-xs font-mono border transition-all ${

@@ -11,51 +11,91 @@ const projects = [
   {
     id: 1,
     title: "POS Software (Point of Sale System)",
-    tagline: "Enterprise-grade retail & restaurant billing solution",
-    description: "A scalable, production-ready Point of Sale (POS) system engineered for high-volume retail and restaurant operations. The platform handles real-time billing, inventory lifecycle management, and analytics-driven decision-making with a focus on performance, security, and reliability.",
-    problem: "Traditional POS systems lack real-time analytics, flexible inventory control, and seamless multi-user workflows, leading to inefficiencies in fast-paced retail environments.",
-    solution: "Built a modular POS platform with optimized state management and secure transaction handling, enabling real-time updates, role-based workflows, and actionable insights through analytics dashboards.",
-    techStack: {
-      frontend: ["React.js", "Redux Toolkit", "Tailwind CSS"],
-      backend: ["Node.js", "Express.js"],
-      database: ["MongoDB"],
-      integrations: ["Stripe API"],
-      auth: ["JWT", "Role-Based Access Control"]
-    },
-    features: ["High-performance real-time billing system", "Inventory tracking with automated low-stock alerts", "Multi-role authentication (Admin, Manager, Cashier)", "Advanced sales analytics & reporting dashboard", "Secure online/offline payment handling", "Invoice generation with print-ready templates"],
-    architecture: ["RESTful API architecture", "Centralized state management using Redux", "Modular backend services", "Scalable database schema design"],
-    metrics: { performance: "Reduced billing time by ~40%", scalability: "Supports 1000+ concurrent transactions", reliability: "99.9% uptime during testing phase" },
-    deployment: { frontend: "Vercel", backend: "Render", database: "MongoDB Atlas" },
+    description:
+      "A full-featured Point of Sale (POS) system designed for retail and restaurant environments. It enables real-time billing, inventory tracking, sales analytics, and multi-user role management. Built with scalability and performance in mind, the system supports secure transactions, dynamic product management, and detailed reporting dashboards.",
+    
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Stripe API",
+      "JWT Authentication"
+    ],
+
+    features: [
+      "Real-time billing & invoice generation",
+      "Inventory management with stock alerts",
+      "Role-based access control (Admin/Cashier)",
+      "Sales analytics & reporting dashboard",
+      "Secure payment integration",
+      "Responsive UI for desktop & tablet"
+    ],
+
     category: "Full Stack",
     status: "Completed"
   },
+
   {
     id: 2,
     title: "Real-Time Chat Messaging App",
-    tagline: "Low-latency real-time communication platform",
-    description: "A high-performance real-time messaging platform enabling seamless communication with instant message delivery, presence tracking, and media sharing.",
-    problem: "Conventional messaging systems struggle with latency and synchronization issues across devices.",
-    solution: "Implemented a WebSocket-driven architecture using Socket.io to ensure instant message delivery.",
-    techStack: { frontend: ["React.js", "Redux", "Tailwind CSS"], backend: ["Node.js", "Express.js", "Socket.io"], database: ["MongoDB"], integrations: ["Cloudinary"], auth: ["JWT"] },
-    features: ["Real-time messaging with WebSocket protocol", "User presence & online/offline status tracking", "Typing indicators and read receipts", "Media/image sharing with cloud storage"],
-    architecture: ["Event-driven architecture (Socket.io)", "Bidirectional communication channels", "Optimized message queue handling"],
-    metrics: { latency: "<100ms message delivery time", scalability: "Handles 500+ concurrent users", engagement: "Improved interaction speed by 60%" },
-    deployment: { frontend: "Vercel", backend: "Render", database: "MongoDB Atlas", media: "Cloudinary" },
-    category: "Realtime App", status: "Completed"
+    description:
+      "A scalable real-time chat application supporting instant messaging, user presence, and message synchronization. The system ensures low-latency communication using WebSockets and includes features like typing indicators, read receipts, and media sharing, delivering a seamless messaging experience across devices.",
+    
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Socket.io",
+      "Express.js",
+      "MongoDB",
+      "Redux",
+      "Tailwind CSS",
+      "Cloudinary"
+    ],
+
+    features: [
+      "Real-time messaging with WebSocket",
+      "Typing indicators & online status",
+      "Media/image sharing support",
+      "Read receipts & message timestamps",
+      "Authentication & secure sessions",
+      "Modern chat UI with dynamic updates"
+    ],
+
+    category: "Realtime App",
+    status: "Completed"
   },
+
   {
     id: 3,
-    title: "Smart Task Automation Scheduler",
-    tagline: "Automated workflow engine with cron-based execution",
-    description: "A robust automation platform that enables users to schedule and execute tasks such as emails, reminders, and notifications.",
-    problem: "Manual task management leads to missed deadlines and inefficient workflows.",
-    solution: "Developed a scheduling engine using cron jobs and background workers to automate recurring tasks.",
-    techStack: { frontend: ["React.js", "Tailwind CSS"], backend: ["Node.js", "Express.js"], database: ["MongoDB"], tools: ["Node-cron", "Nodemailer"], auth: ["JWT"] },
-    features: ["Automated email & notification scheduling", "Cron-based recurring and one-time tasks", "Dashboard for task creation and monitoring"],
-    architecture: ["Cron-based job scheduling system", "Background worker processing", "RESTful service layer"],
-    metrics: { accuracy: "99% task execution accuracy", efficiency: "Reduced manual workload by 70%" },
-    deployment: { frontend: "Vercel", backend: "Render", database: "MongoDB Atlas" },
-    category: "Automation", status: "Completed"
+    title: "Voice-Controlled Process Management System",
+    description:
+      "An intelligent process management system that enables users to control and automate workflows using voice commands. The platform leverages speech recognition and natural language processing to execute tasks, manage processes, and improve productivity through hands-free interaction and smart automation.",
+    
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Web Speech API",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "JWT Authentication"
+    ],
+
+    features: [
+      "Voice command-based task execution",
+      "Speech-to-text processing using Web Speech API",
+      "Workflow automation & process management",
+      "Real-time command recognition feedback",
+      "Secure authentication & user roles",
+      "Interactive dashboard for monitoring processes"
+    ],
+
+    category: "Voice AI / Automation",
+    status: "Completed"
   }
 ];
 
