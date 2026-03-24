@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaTimes, FaRegClock, FaServer, FaCode, FaRocket, 
+  FaTimes, FaServer, FaCode, FaRocket, 
   FaCheckCircle, FaLayerGroup, FaGithub 
 } from 'react-icons/fa';
 
@@ -30,60 +30,77 @@ const ProjectModal = ({ project, onClose }) => {
         </button>
 
         <div className="p-8 z-10">
+
           {/* Header */}
-          <div className="mb-6 border-b border-gray-800 pb-4 relative">
+          <div className="mb-6 border-b border-gray-800 pb-4">
             <span className="text-blue-500 text-[10px] font-bold tracking-widest uppercase mb-2 inline-block bg-blue-500/10 px-2 py-1 rounded">
               {project.category}
             </span>
-            <h2 className="text-3xl font-bold text-white mb-2 leading-tight">{project.title}</h2>
-            <p className="text-gray-400 text-sm font-medium italic">{project.tagline}</p>
+
+            <h2 className="text-3xl font-bold text-white mb-2">
+              {project.title}
+            </h2>
+
+            <p className="text-gray-400 text-sm italic">
+              {project.tagline || "No tagline provided"}
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Left Column: Context & Problem */}
+
+            {/* LEFT */}
             <div className="space-y-6">
+
               <div>
                 <h3 className="text-white font-bold flex items-center gap-2 mb-2">
                   <FaLayerGroup className="text-purple-500" /> Description
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
+                <p className="text-gray-400 text-sm">
+                  {project.description}
+                </p>
               </div>
 
-              <div>
-                <h3 className="text-red-400 font-bold flex items-center gap-2 mb-2">
-                  <FaTimes className="text-red-500" /> Problem
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{project.problem}</p>
-              </div>
+              {project.problem && (
+                <div>
+                  <h3 className="text-red-400 font-bold flex items-center gap-2 mb-2">
+                    <FaTimes className="text-red-500" /> Problem
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {project.problem}
+                  </p>
+                </div>
+              )}
 
-              <div>
-                <h3 className="text-green-400 font-bold flex items-center gap-2 mb-2">
-                  <FaCheckCircle className="text-green-500" /> Solution
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{project.solution}</p>
-              </div>
+              {project.solution && (
+                <div>
+                  <h3 className="text-green-400 font-bold flex items-center gap-2 mb-2">
+                    <FaCheckCircle className="text-green-500" /> Solution
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {project.solution}
+                  </p>
+                </div>
+              )}
+
             </div>
 
-            {/* Right Column: Tech & Architecture */}
+            {/* RIGHT */}
             <div className="space-y-6">
-              
+
               {/* Tech Stack */}
               <div>
                 <h3 className="text-white font-bold flex items-center gap-2 mb-3">
                   <FaCode className="text-blue-500" /> Tech Stack
                 </h3>
-                <div className="space-y-2 text-sm">
-                  {Object.entries(project.techStack).map(([key, value]) => (
-                    <div key={key}>
-                      <span className="text-gray-600 uppercase text-[10px] font-bold tracking-wider block mb-1">{key}</span>
-                      <div className="flex flex-wrap gap-2">
-                        {value.map((tech) => (
-                          <span key={tech} className="bg-[#161b22] border border-gray-700 text-gray-300 px-2 py-1 rounded text-xs shadow-sm">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {(project.techStack || []).map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-[#161b22] border border-gray-700 text-gray-300 px-2 py-1 rounded text-xs"
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -91,58 +108,74 @@ const ProjectModal = ({ project, onClose }) => {
               {/* Features */}
               <div>
                 <h3 className="text-white font-bold mb-2">Key Features</h3>
+
                 <ul className="space-y-2">
-                  {project.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-400 text-xs">
-                      <span className="text-blue-500 mt-1">▹</span>
+                  {(project.features || []).map((feat, idx) => (
+                    <li key={idx} className="flex gap-2 text-gray-400 text-xs">
+                      <span className="text-blue-500">▹</span>
                       {feat}
                     </li>
                   ))}
                 </ul>
               </div>
+
             </div>
           </div>
 
-          {/* Bottom Section: Metrics & Deployment */}
-          <div className="mt-8 pt-6 border-t border-gray-800 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-white font-bold flex items-center gap-2 mb-3">
-                <FaRocket className="text-orange-500" /> Metrics
-              </h3>
-              <div className="grid grid-cols-1 gap-3">
-                {Object.entries(project.metrics).map(([key, value]) => (
-                  <div key={key} className="bg-[#0d1117] p-3 rounded-lg border border-gray-800">
-                    <span className="text-gray-600 text-[10px] uppercase font-bold block">{key}</span>
-                    <span className="text-white font-mono text-sm">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Metrics + Deployment */}
+          <div className="mt-8 pt-6 border-t border-gray-800 grid md:grid-cols-2 gap-6">
 
-            <div>
-              <h3 className="text-white font-bold flex items-center gap-2 mb-3">
-                <FaServer className="text-cyan-500" /> Deployment
-              </h3>
-              <div className="grid grid-cols-1 gap-3">
-                {Object.entries(project.deployment).map(([key, value]) => (
-                  <div key={key} className="bg-[#0d1117] p-3 rounded-lg border border-gray-800 flex justify-between items-center">
-                    <span className="text-gray-600 text-[10px] uppercase font-bold">{key}</span>
-                    <span className="text-cyan-400 font-mono text-xs">{value}</span>
-                  </div>
-                ))}
+            {/* Metrics */}
+            {project.metrics && (
+              <div>
+                <h3 className="text-white font-bold flex items-center gap-2 mb-3">
+                  <FaRocket className="text-orange-500" /> Metrics
+                </h3>
+
+                <div className="space-y-3">
+                  {Object.entries(project.metrics).map(([key, value]) => (
+                    <div key={key} className="bg-[#0d1117] p-3 rounded-lg border border-gray-800">
+                      <span className="text-gray-600 text-[10px] uppercase block">
+                        {key}
+                      </span>
+                      <span className="text-white text-sm">{value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
+
+            {/* Deployment */}
+            {project.deployment && (
+              <div>
+                <h3 className="text-white font-bold flex items-center gap-2 mb-3">
+                  <FaServer className="text-cyan-500" /> Deployment
+                </h3>
+
+                <div className="space-y-3">
+                  {Object.entries(project.deployment).map(([key, value]) => (
+                    <div key={key} className="bg-[#0d1117] p-3 rounded-lg border border-gray-800 flex justify-between">
+                      <span className="text-gray-600 text-[10px] uppercase">
+                        {key}
+                      </span>
+                      <span className="text-cyan-400 text-xs">{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
           </div>
 
-          {/* GitHub Button (Bottom) */}
+          {/* GitHub */}
           <div className="mt-8 pt-4 flex justify-end border-t border-gray-800">
             <a 
-              href="#" // Replace with actual project.githubUrl
+              href={project.githubUrl || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#21262d] hover:bg-[#30363d] border border-gray-700 hover:border-gray-500 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-all"
+              className="flex items-center gap-2 bg-[#21262d] hover:bg-[#30363d] border border-gray-700 text-white px-6 py-2 rounded-lg text-sm"
             >
-              <FaGithub className="text-lg" /> GitHub
+              <FaGithub /> GitHub
             </a>
           </div>
 
@@ -151,4 +184,5 @@ const ProjectModal = ({ project, onClose }) => {
     </div>
   );
 };
+
 export default ProjectModal;
