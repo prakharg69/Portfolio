@@ -19,70 +19,48 @@ function Home() {
 
   return (
     <>
-    <section className="grid-bg h-screen flex items-center justify-center text-white relative overflow-hidden">
+      <section className="grid-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden px-4">
 
-     
-      <motion.div
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute left-24 top-1/3 text-6xl text-gray-400"
-      >
-        <FaGithub />
-      </motion.div>
+        {/* Floating Icons (optional: hide on small screens for cleanliness) */}
+        <motion.div className="hidden md:block absolute left-24 top-1/3 text-6xl text-gray-400"
+          animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity }}>
+          <FaGithub />
+        </motion.div>
 
-      <motion.div
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        className="absolute left-40 bottom-1/3 text-6xl text-yellow-400"
-      >
-        <SiJavascript />
-      </motion.div>
+        <motion.div className="hidden md:block absolute left-40 bottom-1/3 text-6xl text-yellow-400"
+          animate={{ y: [0, 15, 0] }} transition={{ duration: 6, repeat: Infinity }}>
+          <SiJavascript />
+        </motion.div>
 
-      <motion.div
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute left-64 top-1/2 text-6xl text-green-500"
-      >
-        <SiMongodb />
-      </motion.div>
+        <motion.div className="hidden md:block absolute left-64 top-1/2 text-6xl text-green-500"
+          animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity }}>
+          <SiMongodb />
+        </motion.div>
 
+        <motion.div className="hidden md:block absolute right-24 top-1/3 text-6xl text-blue-400"
+          animate={{ y: [0, 15, 0] }} transition={{ duration: 6, repeat: Infinity }}>
+          <FaReact />
+        </motion.div>
 
-     
-      <motion.div
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        className="absolute right-24 top-1/3 text-6xl text-blue-400"
-      >
-        <FaReact />
-      </motion.div>
+        <motion.div className="hidden md:block absolute right-40 bottom-1/3 text-6xl text-green-600"
+          animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity }}>
+          <FaNodeJs />
+        </motion.div>
 
-      <motion.div
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute right-40 bottom-1/3 text-6xl text-green-600"
-      >
-        <FaNodeJs />
-      </motion.div>
+        <motion.div className="hidden md:block absolute right-64 top-1/2 text-6xl text-cyan-400"
+          animate={{ y: [0, 10, 0] }} transition={{ duration: 6, repeat: Infinity }}>
+          <SiTailwindcss />
+        </motion.div>
 
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        className="absolute right-64 top-1/2 text-6xl text-cyan-400"
-      >
-        <SiTailwindcss />
-      </motion.div>
+        {/* Main Text */}
+        <div className="text-center">
 
+          {/* LINE 1 (NO BREAK) */}
+          <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-4 whitespace-nowrap">
 
-     
-      <div className="text-center">
-
-        <div className="flex items-center justify-center gap-6">
-
-          <h1 className="array-font text-7xl md:text-8xl font-bold tracking-tight">
-            CRAFTING DIGITAL
-          </h1>
-
-          <div className="w-125 flex justify-start">
+            <h1 className="array-font text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+              CRAFTING DIGITAL
+            </h1>
 
             <AnimatePresence mode="wait">
               <motion.h1
@@ -91,7 +69,7 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5 }}
-                className="array-font text-7xl md:text-8xl font-extrabold text-blue-500 tracking-tight"
+                className="array-font text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-blue-500 tracking-tight"
               >
                 {words[index]}
               </motion.h1>
@@ -99,18 +77,17 @@ function Home() {
 
           </div>
 
+          {/* LINE 2 */}
+          <h1 className="array-font text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mt-4 md:mt-6">
+            THAT STAND OUT
+          </h1>
+
         </div>
 
-        <h1 className="array-font text-7xl md:text-8xl font-bold tracking-tight mt-6">
-          THAT STAND OUT
-        </h1>
+      </section>
 
-      </div>
-      
-    </section>
-    <Navbar></Navbar>
+      <Navbar />
     </>
-    
   );
 }
 
